@@ -14,13 +14,11 @@ export class ApiService {
     private http: HttpClient
   ) { }
 
-  getProducts() {
-     this.http.get<Products[]>(this.URL).subscribe((products) => {
-      console.log(products);
-    })
+  getProducts(): Observable<any> {
+     return this.http.get<Products[]>(this.URL);
   }
 
-  createProducts() {
-
+  createProducts(product: Products): Observable<any> {
+    return this.http.post<Products>(this.URL, product);
   }
 }

@@ -3,7 +3,12 @@
     {
       "id": 1,
       "nome": "Teste",
-      "price": 10.00
+      "price": 10
+    },
+    {
+      "nome": "teste2",
+      "price": 1111,
+      "id": 2
     }
   ]
 }

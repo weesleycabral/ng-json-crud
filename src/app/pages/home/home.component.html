@@ -1,8 +1,25 @@
 <header class="appbar">
   <h1 class="appbar-title">Meu App</h1>
   <nav class="appbar-nav">
-    <a href="#" class="appbar-link">Página 1</a>
-    <a href="#" class="appbar-link">Página 2</a>
-    <a href="#" class="appbar-link">Página 3</a>
+    <button class="button" (click)="goToCreateProductPage()">Adicionar Produto</button>
   </nav>
 </header>
+<body>
+
+  <ul class="responsive-table" *ngFor="let p of products">
+    <li class="table-header">
+      <div class="col col-1">ID</div>
+      <div class="col col-2">Nome</div>
+      <div class="col col-2">Preço</div>
+      <div class="col col-3">Editar</div>
+      <div class="col col-4">Excluir</div>
+    </li>
+    <li class="table-row">
+      <div class="col col-1" data-label="Job Id">{{ p.id }}</div>
+      <div class="col col-2" data-label="Customer Name">{{ p.nome }}</div>
+      <div class="col col-2" data-label="Customer Name">{{ p.price }}</div>
+      <div class="col col-3" data-label="Amount"><i class="ph-bold ph-pen edit" style="font-size: 1.5rem;"></i></div>
+      <div class="col col-4" data-label="Payment Status"><i class="ph-bold ph-trash del" style="font-size: 1.5rem;"></i></div>
+    </li>
+  </ul>
+</body>
