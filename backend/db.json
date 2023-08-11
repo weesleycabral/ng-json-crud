@@ -1,14 +1,14 @@
 {
   "products": [
     {
-      "id": 1,
-      "nome": "Teste",
-      "price": 10
+      "nome": "ps4",
+      "price": 5000,
+      "id": 2
     },
     {
-      "nome": "teste2",
-      "price": 1111,
-      "id": 2
+      "nome": "ps5",
+      "price": 2000,
+      "id": 3
     }
   ]
 }

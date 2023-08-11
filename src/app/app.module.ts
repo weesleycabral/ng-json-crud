@@ -10,6 +10,7 @@ import { CreateProductComponent } from './pages/create-product/create-product.co
 import { HeaderComponent } from './pages/header/header.component'
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { DeleteProductComponent } from './pages/delete-product/delete-product.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CommonModule } from '@angular/common';
     HomeComponent,
     CreateProductComponent,
     HeaderComponent,
+    DeleteProductComponent,
   ],
   imports: [
     BrowserModule,

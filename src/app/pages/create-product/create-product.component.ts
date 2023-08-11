@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Products } from 'src/app/models/products.model';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -16,7 +17,8 @@ export class CreateProductComponent implements OnInit {
 
 
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private route: Router
   ) {
 
   }
@@ -27,6 +29,7 @@ export class CreateProductComponent implements OnInit {
 
   createNewProduct() {
     this.apiService.createProducts(this.product).subscribe(() => {
+      this.route.navigate(['']);
     })
   }
 }

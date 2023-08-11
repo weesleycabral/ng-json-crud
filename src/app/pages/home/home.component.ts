@@ -10,7 +10,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit  {
-  products: Products[] = [];
+  products: Products[];
 
   constructor(
     private apiService: ApiService,
@@ -19,14 +19,23 @@ export class HomeComponent implements OnInit  {
   }
 
   ngOnInit(): void {
-      this.apiService.getProducts().subscribe((value) => {
-        this.products = value;
-        console.log(this.products);
-      })
+    this.getProducts()
   }
 
-  goToCreateProductPage() {
-    this.router.navigate(['/create-products']);
+  getProducts() {
+    this.apiService.getProducts().subscribe((value) => {
+      this.products = value;
+    })
+  }
+
+  deleteProduct(id: any) {
+    console.log(id);
+    if(confirm(`Deseja mesmo deletar o produto ${this.products[id - 1].nome}?`)) {
+      this.apiService.deleteProducts(id).subscribe(() => {
+        this.getProducts();
+      })
+    }
+
   }
 
 }

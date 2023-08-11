@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Products } from '../models/products.model';
-import { Observable } from 'rxjs';
+import { Observable, catchError, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +20,9 @@ export class ApiService {
 
   createProducts(product: Products): Observable<any> {
     return this.http.post<Products>(this.URL, product);
+  }
+
+  deleteProducts(product: number): Observable<any> {
+    return this.http.delete(`${this.URL}/${product}`);
   }
 }
